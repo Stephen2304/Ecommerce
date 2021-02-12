@@ -8,6 +8,16 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
   <title>Shop - Item</title>
 
   <!-- Bootstrap core CSS -->
@@ -32,7 +42,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href=" {{ route('products.index')}} ">ShopLand</a>
+      <a class="navbar-brand" href="{{ route('products.index')}} ">ShopLand</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,17 +54,17 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href=" {{ route('cart.index') }} "> Panier <span class="badge badge-pill badge-danger"> {{ Cart::count() }} </span></a>
           </li>
+          <li>
+            @include('partials.auth')
+          </li>
         </ul>
+        
       </div>
+      
     </div>
+
   </nav>
   
     <!-- /.col-lg-3 -->
