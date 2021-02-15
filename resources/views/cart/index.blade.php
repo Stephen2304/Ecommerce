@@ -54,7 +54,7 @@
                                 </th>
                                 <td class="border-0 align-middle"><strong>{{ getPrice($product->subtotal()) }}</strong></td>
                                 <td class="border-0 align-middle">
-                                  <select class="custom-select" name="qty" id="qty" data-id="{{ $product->rowId }}">
+                                  <select class="custom-select" name="qty" id="qty" data-id="{{ $product->rowId }}" data-stock="{{ $product->model->stock }}">
                                     @for ($i = 1; $i <= 6; $i++)
                                         <option value="{{ $i }}" {{ $product->qty == $i ? 'selected' : ''}}>
                                             {{ $i }}
@@ -79,26 +79,26 @@
       
             <div class="row py-5 p-4 bg-white rounded shadow-sm">
               <div class="col-lg-6">
-                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>
+                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold"> code Coupon </div>
                 <div class="p-4">
-                  <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>
+                  <p class="font-italic mb-4">Si vous avez un code coupon, Veuillez l'entrer dans le champs ci-dessous</p>
                   <div class="input-group mb-4 border rounded-pill p-2">
-                    <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0">
+                    <input type="text" placeholder="Inserer le coupon" aria-describedby="button-addon3" class="form-control border-0">
                     <div class="input-group-append border-0">
-                      <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply coupon</button>
+                      <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Coupon</button>
                     </div>
-                  </div>
+                  </div>  
                 </div>
-                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions for seller</div>
+                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions pour le vendeur</div>
                 <div class="p-4">
-                  <p class="font-italic mb-4">If you have some information for the seller you can leave them in the box below</p>
+                  <p class="font-italic mb-4">Si vous avez des information pour le vendeur vous pouvez les laisser dans le champs ci-dessous</p>
                   <textarea name="" cols="30" rows="2" class="form-control"></textarea>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Détail de la commande </div>
                 <div class="p-4">
-                  <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
+                  <p class="font-italic mb-4">Les frais supplémentaires sont calculés en fonction des valeurs que vous avez saisies.</p>
                   <ul class="list-unstyled mb-4">
                     <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Sous-total </strong><strong>{{ getPrice(Cart::subtotal()) }}</strong></li>
                     {{-- <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>--}}
@@ -120,7 +120,9 @@
                 <th scope="row" class="border-0">
                 <div class="p-2">
                     <div class="ml-3 d-inline-block align-middle">
-                    <span class="text-muted font-weight-normal font-italic d-block"><div class="alert alert-info ">Votre panier est vide.</div></span>
+                    <span class="font-weight-normal font-italic d-block"><h5>Votre panier est vide pour le moment.</h5></span>
+                    Mais vous pouvez visiter la <a href=" {{ route('products.index') }} " >boutique</a>
+                    pour faire votre shopping.
                     </div>
                 </div>
                 </th>
@@ -135,7 +137,9 @@
     Array.from(qty).forEach((element) => {
         element.addEventListener('change', function () {
             var rowId = element.getAttribute('data-id');
+            var stock = element.getAttribute('data-stock');
             var token = document.querySelector('meta[name=csrf-token]').getAttribute('content');
+            
             fetch(`/panier/${rowId}`,
                 {
                     headers: {
@@ -146,7 +150,8 @@
                     },
                     method: 'PATCH',
                     body: JSON.stringify({
-                        qty: this.value
+                        qty: this.value,
+                        stock: stock
                     })
             }).then((data) => {
                 console.log(data);

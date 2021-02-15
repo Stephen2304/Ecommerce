@@ -10,12 +10,12 @@
 
 @section('content')
     
-        Page de paiement
+        <h3>Procéder au paiment</h3>
         <div class="row">
             <div class="col-md-6">
                <form action="{{ route('checkout.store') }}" method="POST" class="my-4" id="payment-form">
                 {{ csrf_field() }}
-                <div id="card-element">
+                <div id="card-element shadow-sm">
                 <!-- Elements will create input elements here -->
                 </div>
 
@@ -81,7 +81,7 @@ var card = elements.create("card", { style: style });
                     var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
                     var form = document.getElementById('payment-form');
                     var url = form.action;
-                    var redirect = '/merci';
+
                     fetch(
                         url,
                         {
@@ -96,8 +96,13 @@ var card = elements.create("card", { style: style });
                                 paymentIntent: paymentIntent
                             })
                         }).then((data) => {
-                            console.log(data);
-                            form.reset();
+                            if (data.status === 400) {
+                                var redirect = '/boutique';
+                            }else{
+                                var redirect = '/merci';
+                            }
+                            //console.log(data);
+                            //form.reset();
                             window.location.href = redirect;
                     }).catch((error) => {
                         console.log(error)

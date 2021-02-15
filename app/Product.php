@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $filllable = ['stock'];
+    
     public function getPrice() {
         $price = $this->price;
 
