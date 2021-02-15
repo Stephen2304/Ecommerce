@@ -36,7 +36,7 @@
 
 @yield('extra-meta')
 </head>
-@yield('extra-js')
+
 <body>
 
   <!-- Navigation -->
@@ -64,7 +64,7 @@
       </div>
       
     </div>
-
+    
   </nav>
   
     <!-- /.col-lg-3 -->
@@ -82,9 +82,20 @@
             @foreach (App\Category::all() as $category)
               <a href=" {{ route('products.index', ['categorie' => $category -> slug]) }}" class="list-group-item"> {{ $category -> name }} </a>
             @endforeach
+            
           </div>
+          
         </div>
-        @yield('container')
+        <div class="col-lg-9">
+          <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel" style="margin-right: 7%">
+          <img class="d-block img-fluid" alt="First slide" src="{{ asset('img/shop.jpg') }}" style="height: 400px; width:100%; ">
+        
+          <div class="row" style="margin-right: -36%">
+            @yield('container')
+          </div>
+
+      </div>
+      </div>
         
     </div>
     
@@ -103,7 +114,7 @@
   <script src="../public/jquery/jquery.min.js"></script>
   <script src="../public/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  
+  @yield('extra-js')
 </body>
 
 </html>

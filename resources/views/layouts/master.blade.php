@@ -19,7 +19,7 @@
 
   @yield('extra-meta')
 
-  <title>Shop - Homepage </title>
+  <title> 🛒 Shop - Homepage </title>
 
   <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}" defer></script>
@@ -44,7 +44,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="{{ route('products.index')}} ">ShopLand</a>
+      <a class="navbar-brand" href="{{ route('products.index')}} "> 🛒 ShopLand</a>
 
       @include('partials.search')
 
@@ -79,7 +79,7 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">My Shop</h1>
+        <h1 class="my-3">My Shop</h1>
         <div class="list-group">
           
           @foreach (App\Category::all() as $category)
@@ -94,7 +94,7 @@
       <div class="col-lg-9">
 
         <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel" style="margin-right: 7%">
-            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+            <img class="d-block img-fluid" alt="First slide" src="{{ asset('img/shop.jpg') }}" style="height: 400px; width:100%">
           </a>
           @if (session('success'))
           <div class="alert alert-success">
