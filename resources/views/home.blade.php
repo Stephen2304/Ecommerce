@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
-
+                <h3 class="text-muted text-center">Visitez a la <a  href="{{ route('products.index')}} "> boutique</a> !</h3> 
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -18,7 +18,7 @@
                     <div class="card mt-4">
                         <div class="card">
                           <div class="card-header">
-                            Commande passée le {{ Carbon\Carbon::parse($order->payment_created_at)
+                            Commande(s) passée(s) le {{ Carbon\Carbon::parse($order->payment_created_at)
                             -> format('d/m/Y à H:i') }} d'un montant de <strong> {{ getPrice($order->amount ) }} </strong>
                           </div>
                           <div class="card-body">

@@ -2,8 +2,7 @@
 
   @section('container')
 
-    <div class="col-lg-9">
-    <div class="card mt-4">
+    <div class="mt-4 col-lg-9">
     <div class="card text-center">
       <div class="card-header">
         <div class="ml-3 d-inline-block align-middle">  
@@ -26,7 +25,7 @@
     </div>
     
 
-    <div class="card text-center">
+    <div class="card text-center mt-4">
       <div class="card-header">
           <strong class="text-muted font-weight-normal font-italic" > Galérie d'images</strong> <br>
           <div class="mt-2">
@@ -56,7 +55,6 @@
   </div>
 
     <!-- /.card -->
-  </div>
 
   
   @endsection

@@ -16,12 +16,12 @@
           </div>
           <div class="card-body">
               <h4 class="card-title">
-              <a href="#">{{ $product->title }}</a>
+              <a href="#" class="text-dark">{{ $product->title }}</a>
               </h4>
               <h6 mb-1 text-muted >{{ $product->created_at->format('d/m/Y') }}</h6>
               
               <p class="card-text">{{$product->subtitle }}</p>
-              <strong class="display-6">{{$product->getPrice() }}</strong>
+              <strong class="display-6" style="color: rgb(252, 14, 14)">{{$product->getPrice() }}</strong>
           </div>
           <div class="card-footer">
               <a href="{{ route('products.show', $product->slug) }}" class="stretched-link btn btn-info text-white" style="width: 100%"><i class="fas fa-angle-right"></i> <strong>Consulter l'article</strong></a>
