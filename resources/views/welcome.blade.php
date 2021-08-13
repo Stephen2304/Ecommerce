@@ -66,9 +66,9 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links bg-dark">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}" style="color: red">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -81,11 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Laravel E-commerce
+                   E-MarketPlace
                 </div>
 
                 <div class="links">
-                    <a href=" {{ route('products.index')}} ">VISITER LA BOUTIQUE !</a> 
+                    <a href=" {{ route('products.index')}} " style="color: red">VISITER LA BOUTIQUE !</a> 
                 </div>
             </div>
         </div>
