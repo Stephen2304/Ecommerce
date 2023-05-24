@@ -11,17 +11,17 @@
         "php": "^7.3.21|^8.0",
         "fideloper/proxy": "^4.4",
         "hardevine/shoppingcart": "^2.9",
-        "laravel/framework": "^6.20",
+        "laravel/framework": "^7.0",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "1.2",
+        "spatie/laravel-export": "*",
         "stripe/stripe-php": "^7.71",
         "tcg/voyager": "^1.4"
     },
     "require-dev": {
-        "facade/ignition": "^1.16.4",
+        "facade/ignition": "^2.0",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^3.0",
+        "nunomaduro/collision": "^4.3",
         "phpunit/phpunit": "^8.5.8|^9.3.3"
     },
     "config": {

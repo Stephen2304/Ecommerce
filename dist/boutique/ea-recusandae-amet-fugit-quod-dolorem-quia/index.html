@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+    <!-- Scripts -->
+    <script src="http://localhost/js/app.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  
+    <!-- Styles -->
+    <link href="http://localhost/css/app.css" rel="stylesheet">
+
+  <title> 🛒 Shop - Item</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+  <!-- Custom styles for this template -->
+  <link href="css/shop-item.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 56px;
+  }
+  </style>
+
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="http://localhost/boutique "> 🛒 ShopLand</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href=" http://localhost/boutique ">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=" http://localhost/panier "> Panier <span class="badge badge-pill badge-danger"> 0 </span></a>
+          </li>
+          <li>
+            <!-- Authentication Links -->
+    <li class="nav-item">
+        <a class="nav-link" href="http://localhost/login">Login</a>
+    </li>
+            <li class="nav-item">
+            <a class="nav-link" href="http://localhost/register">Register</a>
+        </li>
+              </li>
+        </ul>
+        
+      </div>
+      
+    </div>
+    
+  </nav>
+  
+    <!-- /.col-lg-3 -->
+
+    
+    <!-- /.col-lg-9 -->
+    
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+          <h1 class="my-4">Shop Name</h1>
+          <div class="list-group">
+                          <a href=" http://localhost/boutique?categorie=high-tech" class="list-group-item"> High Tech </a>
+                          <a href=" http://localhost/boutique?categorie=livres" class="list-group-item"> Livres </a>
+                          <a href=" http://localhost/boutique?categorie=meubles" class="list-group-item"> Meubles </a>
+                          <a href=" http://localhost/boutique?categorie=jeux" class="list-group-item"> Jeux </a>
+                          <a href=" http://localhost/boutique?categorie=gastronomie" class="list-group-item"> Gastronomie </a>
+                        
+          </div>
+          
+        </div>
+        <div class="col-lg-9">
+          <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel" style="margin-right: 7%">
+          <img class="d-block img-fluid" alt="First slide" src="http://localhost/img/shop.jpg" style="height: 400px; width:100%; ">
+        
+          <div class="row" style="margin-right: -36%">
+            
+    <div class="mt-4 col-lg-9">
+    <div class="card text-center">
+      <div class="card-header">
+        <div class="ml-3 d-inline-block align-middle">  
+          <span class="text-muted font-weight-normal font-italic d-block">
+            <div class="badge badge-pill badge-info"> Disponible </div>
+                      Catégorie: High Tech, 
+                      Catégorie: Jeux
+           
+        </span>
+        </div>
+      </div>
+      <div class="card-body">
+        <img class="card-img-top img-fluid" src=" http://localhost/storage/https://placehold.it/700x400" id="mainImage" style="width: 500px">
+      </div>
+      <div class="card-footer text-muted">
+        <h3 class="card-title">Culpa est dicta quos est maxime.</h3>
+        <p class="card-text">Nemo veniam itaque illo sunt a ut dolores repudiandae. Recusandae natus odio qui vitae et. Rem cum quia iste dolores aut et.</p>
+        <h4>17 299,00 Fcfa</h4>
+      </div>
+    </div>
+    
+
+    <div class="card text-center mt-4">
+      <div class="card-header">
+          <strong class="text-muted font-weight-normal font-italic" > Galérie d'images</strong> <br>
+          <div class="mt-2">
+                      </div>
+      </div>
+      <div class="card-body">
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <form action="http://localhost/panier/ajouter" method="POST">
+            <input type="hidden" name="_token" value="DHlEC5cPwBGq7fQW9Jp6lr4WpqenFCu15pwdNk5m">
+            <input type="hidden" name="product_id" value=" 13 ">
+            <button type="submit" class="btn btn-success"><i class="fal fa-shopping-cart" aria-hidden="true"></i> Ajouter au panier</button>
+          </form>
+              </div>
+      <div class="card-footer text-muted">
+        Posté le: 24/05/2023
+      </div>
+    </div>
+
+  </div>
+
+    <!-- /.card -->
+
+  
+            </div>
+
+      </div>
+      </div>
+        
+    </div>
+    
+  </div>
+  <!-- /.container -->
+  
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../public/jquery/jquery.min.js"></script>
+  <script src="../public/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    var mainImage = document.querySelector('#mainImage');
+    var thumbnails = document.querySelectorAll('.img-thumbnail');
+
+    thumbnails.forEach((element) => element.addEventListener('click', changeImage));
+
+    function changeImage(e) {
+      mainImage.src = this.src;
+    }
+  </script>
+</body>
+
+</html>
