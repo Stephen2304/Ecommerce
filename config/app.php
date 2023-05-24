@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://ecommerce-shopland.netlify.app/'),
+    'url' => env('APP_URL', 'https://ecommerce-shopland.netlify.app'),
 
     'asset_url' => env('ASSET_URL', null),
 
