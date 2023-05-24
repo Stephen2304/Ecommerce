@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +21,7 @@ Route::get('/', function () {
 /*Product Route */
 Route::get('/boutique', 'ProductController@index')->name('products.index');
 Route::get('/boutique/{slug}', 'ProductController@show')->name('products.show');
-Route::get('/search', 'ProductController@search')->name('products.search'); 
+Route::get('/search', 'ProductController@search')->name('products.search');
 
 /* Cart Routes*/
 Route::group(['middleware' => ['auth']], function () {
