@@ -1,6 +1,7 @@
 {
     "private": true,
     "scripts": {
+        "deploy": "netlify deploy --prod",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
@@ -22,5 +23,5 @@
         "sass-loader": "^8.0.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
-    }
+    },
 }

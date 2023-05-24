@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://ecommerce-shopland.netlify.app'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -161,6 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Spatie\Export\ExportServiceProvider::class,
 
         /*
          * Package Service Providers...
