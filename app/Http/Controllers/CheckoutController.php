@@ -26,9 +26,9 @@ class CheckoutController extends Controller
         }
 
         Stripe::setApiKey('sk_test_51IH8lKCz3uAE1pKGCXLlymxbB3zYJdTlUn5rfwoezOuJpRjjx22WejDVAqnMb5BaFfFzFzqbYgGDJQpgypLZ8yOx00QCZcZ82V');
-        
+
         $intent = PaymentIntent::create([
-            'amount'=>round(Cart::total()),
+            'amount' => round(Cart::total()),
             'currency' => 'eur',
         ]);
 
@@ -59,9 +59,8 @@ class CheckoutController extends Controller
     {
         if ($this->checkIfNotAvailable()) {
             //Envoyer une erreur
-            Session::flash('error','Un produit dans votre panier n\'est plus dispobible');
-            return response()->json(['success' => false],400);
-
+            Session::flash('error', 'Un produit dans votre panier n\'est plus dispobible');
+            return response()->json(['success' => false], 400);
         }
 
         $data = $request->json()->all();
@@ -72,8 +71,8 @@ class CheckoutController extends Controller
         $order->amount = $data['paymentIntent']['amount'];
 
         $order->payment_created_at = (new DateTime())
-              ->setTimestamp($data['paymentIntent']['created'])
-              ->format('Y-m-d H:i:s');
+            ->setTimestamp($data['paymentIntent']['created'])
+            ->format('Y-m-d H:i:s');
 
         $products = [];
         $i = 0;
@@ -82,7 +81,7 @@ class CheckoutController extends Controller
             # code...
             $products['product_' . $i][] = $product->model->title;
             $products['product_' . $i][] = $product->model->price;
-            $products['product_' . $i][] = $product->qty;  
+            $products['product_' . $i][] = $product->qty;
             $i++;
         }
 
@@ -90,25 +89,22 @@ class CheckoutController extends Controller
         $order->user_id = Auth()->user()->id;
         $order->save();
 
-        if ($data['paymentIntent']['status']=== 'succeeded') {
+        if ($data['paymentIntent']['status'] === 'succeeded') {
             $this->updateStock();
             Cart::destroy();
-            Session::flash('success','Votre commande a été traité avec succès');
-            return response()->json(['success' =>'Payment Intent Succeeded']);
-        }else{
-            return response()->json(['error' =>'Payment Intent Not Succeeded']);
-
+            Session::flash('success', 'Votre commande a été traité avec succès');
+            return response()->json(['success' => 'Payment Intent Succeeded']);
+        } else {
+            return response()->json(['error' => 'Payment Intent Not Succeeded']);
         }
-
     }
 
 
 
-    public function thankYou() {
+    public function thankYou()
+    {
 
         return Session::has('success') ? view('checkout.thankYou') : redirect()->route('products.index');
-
-
     }
 
 
@@ -164,7 +160,7 @@ class CheckoutController extends Controller
         foreach (Cart::content() as $item) {
             $product = Product::find($item->model->id);
 
-            if ($product -> stock  < $item -> qty) {
+            if ($product->stock  < $item->qty) {
                 return true;
             }
         }
